@@ -271,6 +271,10 @@ module Pusher
       get("/channels/#{channel_name}/users", params)
     end
 
+    def terminate_user_connection(user_id)
+      post("/users/#{user_id}/terminate_connections", "{}");
+    end
+
     # Trigger an event on one or more channels
     #
     # POST /apps/[app_id]/events
